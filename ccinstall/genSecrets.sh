@@ -5,7 +5,7 @@ OMS_BASE=/u01/app/oracle/cc
 
 # do not etdit below this line
 GPGKEY=ccadmin
-SECRETS=$OMS_BASE/secrets
+SECRETS=$OMS_BASE/share/secrets
 
 
 usage(){
@@ -54,7 +54,7 @@ if [ -z ${password+x} ]; then echo "password is unset"; else echo "password is s
 if [ -z ${generate+x} ]; then echo "generate is unset"; else echo "generate is set to '$generate'"; fi
 if [ -z ${generate+x} ] && [ -z  ${password+x} ]; then
         usage
-elif [ ${generate+x} ] && [ ${password+x} ]; then
+elif [ ${generate+x} ] && [ -z ${password+x} ]; then
         pw=$(openssl rand -base64 32)
         secrets
 elif [ -z ${generate+x} ] && [ ${password+x} ]; then
