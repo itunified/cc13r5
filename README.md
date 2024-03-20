@@ -49,11 +49,11 @@ gpg --import $OMS_BASE/share/secrets/private.ccadmin.key
 ```
 ### create secrets
 ```bash
-$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=sysman -p -g
-$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=omrsys -p -g
-$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=weblogic -p -g
-$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=nodemanager -p -g
-$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=agentregistration -p -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=sysman -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=omrsys -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=weblogic -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=nodemanager -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=agentregistration -g
 ```
 ### check cloud control pre requirements
 ```bash
