@@ -3,7 +3,7 @@
 
 ### check if gpg is installed
 ```bash
-gpg -version
+gpg --version
 ```
 ### create OMS filesystem structure
 ```bash
