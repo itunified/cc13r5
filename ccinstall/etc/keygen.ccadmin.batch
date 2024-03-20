@@ -1,0 +1,7 @@
+%no-protection
+Key-Type: default
+Key-Length: 4096
+Subkey-Type: default
+Subkey-Length: 4096
+Name-Real: ccadmin
+Expire-Date: 0
