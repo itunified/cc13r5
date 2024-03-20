@@ -28,7 +28,7 @@ mkdir -p $OMS_BASE/tmp
 ### git clone
 ```bash
 $OMS_BASE/share/scripts
-git clone
+git clone git@github.com:itunified/cc13r5.git
 mv cc13r5-main/ccinstall/ .
 rm -rf cc13r5-main
 cd ccinstall/
