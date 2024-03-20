@@ -39,13 +39,21 @@ chmod +x *.sh
 ### scp binaries to target server
 ### download clout control patches 
 ### copy patches to target server
-### create secretes
+### create gpg key
 ```bash
 gpg --batch --gen-key $OMS_BASE/share/scripts/ccinstall/etc/keygen.ccadmin.batch
 gpg --export ccadmin > $OMS_BASE/share/secrets/public.ccadmin.key
 gpg --export-secret-key ccadmin > $OMS_BASE/share/secrets/private.ccadmin.key
 import (only multiple oms)
 gpg --import $OMS_BASE/share/secrets/private.ccadmin.key
+```
+### create secrets
+```bash
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=sysman -p -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=omrsys -p -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=weblogic -p -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=nodemanager -p -g
+$OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=agentregistration -p -g
 ```
 ### check cloud control pre requirements
 ```bash
