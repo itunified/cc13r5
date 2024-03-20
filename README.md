@@ -25,6 +25,16 @@ mkdir -p $OMS_BASE/share/env
 mkdir -p $OMS_BASE/share/instantclient19.19
 mkdir -p $OMS_BASE/tmp
 ```
+### git clone
+```bash
+$OMS_BASE/share/scripts
+git clone
+mv cc13r5-main/ccinstall/ .
+rm -rf cc13r5-main
+cd ccinstall/
+chmod +x *.sh
+```
+#### 
 ### download oracle cloud control binaries
 ### scp binaries to target server
 ### download clout control patches 
