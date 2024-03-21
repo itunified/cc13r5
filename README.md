@@ -56,6 +56,8 @@ $OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=weblogic -g
 $OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=nodemanager -g
 $OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=agentregistration -g
 ```
+### edit etc/.response
+
 ### check cloud control pre requirements
 ```bash
 $OMS_BASE/share/scripts/ccinstall/silentInstall.sh -p
