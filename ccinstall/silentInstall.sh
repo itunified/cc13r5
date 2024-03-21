@@ -157,7 +157,8 @@ done
 
 # MAIN
 echo "start ..."
-mydir=$(mktemp -dt "$(basename $0).XXXXXXXX" --tmpdir=/run/user/$(id -u))
+mkdir $OMS_BASE/tmp/$(id -u)
+mydir=$(mktemp -dt "$(basename $0).XXXXXXXX" --tmpdir=$OMS_BASE/tmp/$(id -u))
 myfile=$(mktemp -t "$(basename $0).XXXXXXXX" --tmpdir=$mydir)
 echo $mydir
 echo $myfile
