@@ -17,6 +17,7 @@ mkdir -p $OMS_BASE/agent
 mkdir -p $OMS_BASE/instantclient19.19
 mkdir -p $OMS_BASE/share/agent_download
 mkdir -p $OMS_BASE/share/scripts
+mkdir -p $OMS_BASE/share/scripts/ccinstall/logs
 mkdir -p $OMS_BASE/share/swlib
 mkdir -p $OMS_BASE/share/patches
 mkdir -p $OMS_BASE/share/software
