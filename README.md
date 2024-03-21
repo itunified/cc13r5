@@ -57,6 +57,9 @@ $OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=nodemanager -g
 $OMS_BASE/share/scripts/ccinstall/genSecrets.sh -username=agentregistration -g
 ```
 ### edit etc/.response
+```markdown
+OMR_HOSTNAME without domain name
+```
 
 ### check cloud control pre requirements
 ```bash
