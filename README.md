@@ -70,7 +70,8 @@ $OMS_BASE/share/scripts/ccinstall/silentInstall.sh -p
 $OMS_BASE/share/scripts/ccinstall/silentInstall.sh -i
 ```
 ### patching
-```├── OMSPatcher
+```
+├── OMSPatcher
 │   ├── latest -> p19999993_135000_Generic.zip
 │   └── p19999993_135000_Generic.zip
 ├── p35437906_135000_Generic.zip
