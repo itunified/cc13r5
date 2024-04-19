@@ -78,3 +78,83 @@ $OMS_BASE/share/scripts/ccinstall/silentInstall.sh -i
 ├── PatchSearch.xml
 └── readme.txt
 ```
+## list available patches
+```
+cd /u01/app/oracle/cc/share/scripts/ccinstall
+./silentInstall.sh -u list
+```
+
+## update OMSPatcher
+```
+cd /u01/app/oracle/cc/share/scripts/ccinstall
+./silentInstall.sh -u omspatcher
+```
+
+## apply RU
+```
+cd /u01/app/oracle/cc/share/scripts/ccinstall
+./silentInstall.sh -u patch p35437906_135000_Generic.zip
+```
+
+## backup OMS configuraiton ot /u01/app/oracle/cc/share/backup
+```
+<OMS_HOME>/bin/emctl exportconfig oms [-sysman_pwd <sysman password>]
+[-dir <backup dir>] Specify directory to store backup file
+[-keep_host] Specify this parameter if the OMS was installed using a virtual hostname (using
+ORACLE_HOSTNAME=<virtual_hostname>)
+```
+
+### add additional OMS
+install cloud control software on additional OMS 
+this will only install the software binaries
+```
+cd /u01/app/oracle/cc/share/scripts/ccinstall
+./silentInstall.sh -s
+```
+
+copy response file to /u01/app/oracle/cc/share/backup/omsca.rsp
+this will be needed later for recover additional oms
+
+## update OMSPatcher
+```
+cd /u01/app/oracle/cc/share/scripts/ccinstall
+./silentInstall.sh -u omspatcher
+```
+
+## apply RU
+```
+cd /u01/app/oracle/cc/share/scripts/ccinstall
+./silentInstall.sh -u patch p35437906_135000_Generic.zip
+```
+
+## configure additional OMS
+
+## backup and edit the OMS_HOME/bin/EMomsCmds.pm file
+```
+- Look for this subroutine:
+
+sub getCommonJavaOptions
+
+- Change this line:
+
+$systemProps = " -Djava.security.egd=file:///dev/./urandom -Dweblogic.log.FileName=$INSTANCE_HOME/sysman/log/wls.log ";
+to:
+
+$systemProps = " -Djava.security.egd=file:///dev/./urandom -Dweblogic.log.FileName=$INSTANCE_HOME/sysman/log/wls.log -Doracle.jdbc.fanEnabled=false ";
+```
+
+## recover OMS from backup file
+```
+$ORACLE_HOME/bin/omsca recover -ms -backup_file /u01/app/oracle/cc/share/backup/opf_ADMIN_20230725_183726.bka -silent -RESPONSE_FILE /u01/app/oracle/cc/share/scripts/ccinstall/omsca.rsp
+```
+
+## verify installation
+
+### configure loadbalance
+
+## secure oms
+
+## secure agent
+
+
+
