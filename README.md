@@ -151,10 +151,26 @@ $ORACLE_HOME/bin/omsca recover -ms -backup_file /u01/app/oracle/cc/share/backup/
 ## verify installation
 
 ### configure loadbalance
-
 ## secure oms
 
+./emctl secure oms -host <https://URL> -secure_port 4900 -slb_port 4900 -slb_console_port 7803 -slb_jvmd_https_port 7301 -trust_certs_loc /tmp/customcamos.txt
+
+```ìnfo
+customca.txt need to contain root_ca und slb cert (no blanks end of line)
+
+only ca_root
+```
+
+restart oms
+
+
 ## secure agent
+
+./orapki wallet create -wallet /home/oracle/wallet -auto_login
+./orapki wallet add -wallet /home/oracle/wallet -trusted_cert -cert /tmp/customcaoms.txt
+./emctl secure agent -emdWalletSrcUrl <uploadURL>
+cat /u01/app/oracle/cc/agent/agent_inst/sysman/log/secure.log
+
 
 
 
